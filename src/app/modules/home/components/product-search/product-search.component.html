@@ -5,7 +5,7 @@
       <h2
         class="text-base font-semibold text-indigo-600 tracking-wide uppercase"
       >
-        Bookstore
+        dcupl Bookstore
       </h2>
       <p
         class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl"
@@ -23,6 +23,8 @@
           placeholder="Harry P..."
           autocomplete="off"
           autofill="off"
+          (keyup)="keyUp(input)"
+          #input
         />
       </div>
     </div>

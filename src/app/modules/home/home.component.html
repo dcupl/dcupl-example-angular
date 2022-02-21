@@ -1,9 +1,17 @@
 <div>
   <div>
-    <app-product-search></app-product-search>
+    <app-product-search [list]="list"></app-product-search>
   </div>
 
-  <div>
-    <app-product-list></app-product-list>
+  <div *ngIf="isLoading" class="text-center mt-16">
+    <p>Loading</p>
+  </div>
+
+  <div *ngIf="showError" class="text-center mt-16">
+    <p>Uuups... Something went wrong.</p>
+  </div>
+
+  <div *ngIf="!isLoading && !showError">
+    <app-product-list [list]="list"></app-product-list>
   </div>
 </div>

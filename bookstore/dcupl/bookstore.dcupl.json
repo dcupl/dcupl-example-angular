@@ -1,0 +1,61 @@
+[
+  {
+    "key": "publisher",
+    "properties": [
+      {
+        "key": "publisher_name",
+        "datatype": "string"
+      }
+    ]
+  },
+  {
+    "key": "author",
+    "fields": [
+      {
+        "key": "book_ids",
+        "model": "book",
+        "type": "multiValued"
+      }
+    ],
+    "properties": [
+      {
+        "key": "author_name",
+        "datatype": "string"
+      }
+    ]
+  },
+  {
+    "key": "book_language",
+    "properties": [
+      {
+        "key": "language_name",
+        "datatype": "string"
+      }
+    ]
+  },
+  {
+    "key": "book",
+    "fields": [
+      {
+        "key": "author",
+        "model": "author",
+        "type": "multiValued",
+        "resolve": {
+          "field": "book_ids",
+          "model": "author"
+        }
+      }
+    ],
+    "properties": [
+      {
+        "key": "title",
+        "datatype": "string",
+        "filter": true
+      },
+      {
+        "key": "publication_date",
+        "datatype": "string"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+[
+    { 
+        "url": "http://localhost:8083/bookstore.dcupl.json",
+        "type":"model"
+    },
+    {
+        "url": "http://localhost:8083/api/author.csv",
+        "type":"data",
+        "model": "author"
+    },
+    {
+        "url": "http://localhost:8083/api/book.csv",
+        "type":"data",
+        "model": "book"
+    },
+    {
+        "url": "http://localhost:8083/api/publisher.csv",
+        "type":"data",
+        "model": "publisher"
+    }
+]
