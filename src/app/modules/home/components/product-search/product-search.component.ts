@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DcuplList, Suggestion } from '@dcupl/core';
+import { DcuplList } from '@dcupl/core';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 
 @Component({
@@ -11,8 +11,6 @@ export class ProductSearchComponent implements OnInit {
   @Input() list!: DcuplList;
 
   public search$ = new Subject<string>();
-
-  public suggestions: Suggestion[] = [];
 
   constructor() {}
 
@@ -33,9 +31,5 @@ export class ProductSearchComponent implements OnInit {
 
   public keyUp(input: HTMLInputElement) {
     this.search$.next(input.value);
-  }
-
-  public async getSuggestions(value: string) {
-    return this.list.catalog.computeSuggestionsForSearchTerm('title', value);
   }
 }
