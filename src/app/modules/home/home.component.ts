@@ -30,14 +30,15 @@ export class HomeComponent implements OnInit {
 
   private async initLoader() {
     const loader = new DcuplBasicLoader();
-    this.dcupl.addLoader('main', loader);
+    this.dcupl.addLoader(loader);
     loader.addItems(loaderConfig as BasicLoaderItem[]);
-    const { error } = await loader.init();
+    const { error } = await loader.processItems();
 
     if (error) {
       this.showError = true;
     }
 
+    this.dcupl.init();
     this.isLoading = false;
   }
 

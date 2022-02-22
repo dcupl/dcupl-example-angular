@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
   private async init() {
     this.loadData();
 
-    this.list.catalog.onUpdate(async () => {
+    this.list.onUpdate(async () => {
       this.loadData();
     });
   }

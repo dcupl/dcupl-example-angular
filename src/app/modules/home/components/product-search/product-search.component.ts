@@ -22,7 +22,7 @@ export class ProductSearchComponent implements OnInit {
     this.search$
       .pipe(debounceTime(300), distinctUntilChanged())
       .subscribe(async (value: string) => {
-        await this.list.catalog.applyFilterText({
+        await this.list.catalog.applyTextFilter({
           filterId: 'title',
           text: value,
         });
