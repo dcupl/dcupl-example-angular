@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DcuplCore, DcuplList } from '@dcupl/core';
-import { DcuplBasicLoader, BasicLoaderItem } from '@dcupl/loader';
-
-import * as loaderConfig from '../../../../bookstore/dcupl/bookstore_local.ldp.json';
+import { DcuplBasicLoader } from '@dcupl/loader';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +29,39 @@ export class HomeComponent implements OnInit {
   private async initLoader() {
     const loader = new DcuplBasicLoader();
     this.dcupl.addLoader(loader);
-    loader.addItems(loaderConfig as BasicLoaderItem[]);
+    loader.addItems([
+      {
+        url: 'http://localhost:8083/models/book.dcupl.json',
+        type: 'model',
+      },
+      {
+        url: 'http://localhost:8083/models/book_language.dcupl.json',
+        type: 'model',
+      },
+      {
+        url: 'http://localhost:8083/models/author.dcupl.json',
+        type: 'model',
+      },
+      {
+        url: 'http://localhost:8083/models/publisher.dcupl.json',
+        type: 'model',
+      },
+      {
+        url: 'http://localhost:8083/data/author.csv',
+        type: 'data',
+        model: 'author',
+      },
+      {
+        url: 'http://localhost:8083/data/book.csv',
+        type: 'data',
+        model: 'book',
+      },
+      {
+        url: 'http://localhost:8083/data/publisher.csv',
+        type: 'data',
+        model: 'publisher',
+      },
+    ]);
     const { error } = await loader.processItems();
 
     if (error) {
