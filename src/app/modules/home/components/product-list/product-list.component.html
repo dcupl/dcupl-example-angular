@@ -5,6 +5,9 @@
     <div *ngIf="books?.length === 0" class="text-center">
       <p class="text-xl font-extrabold text-gray-900">No Books available</p>
     </div>
+    <div *ngIf="meta" class="text-center">
+      <p class="text-xl font-extrabold text-gray-900">{{ meta.size }} Results</p>
+    </div>
     <div
       class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
     >
