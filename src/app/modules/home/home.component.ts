@@ -11,7 +11,11 @@ export class HomeComponent implements OnInit {
   public isLoading = true;
   public showError = false;
 
-  public dcupl = new DcuplCore();
+  public dcupl = new DcuplCore({
+    logs: {
+      enabled: true,
+    },
+  });
 
   public list!: DcuplList;
 

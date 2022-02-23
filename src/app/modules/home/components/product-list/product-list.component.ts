@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DcuplList } from '@dcupl/core';
-import { ListMetadata } from '@dcupl/core/dist/lib-esm/types/core.types';
+import { ListMetadata } from '@dcupl/common';
 
 @Component({
   selector: 'app-product-list',
@@ -37,7 +37,5 @@ export class ProductListComponent implements OnInit {
     ).result!;
 
     this.meta = await (await this.list.catalog.getMetadata()).result!;
-
-    console.log(this.books);
   }
 }
