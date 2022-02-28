@@ -74,10 +74,11 @@ export class HomeComponent implements OnInit {
 
     this.dcupl.init();
     this.isLoading = false;
+    Object.defineProperty(window, 'dcupl', { value: this.dcupl });
   }
 
   private async initList() {
-    const { result, error } = await this.dcupl.getList('book');
+    const { result, error } = await this.dcupl.getList({ listKey: 'book' });
 
     if (error) {
       this.showError = true;

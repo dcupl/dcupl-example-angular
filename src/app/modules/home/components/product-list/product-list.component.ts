@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DcuplList } from '@dcupl/core';
-import { ListMetadata } from '@dcupl/common';
+import { DcuplList, ListMetadata } from '@dcupl/core';
 
 @Component({
   selector: 'app-product-list',
