@@ -27,6 +27,12 @@ export class ProductListComponent implements OnInit {
   }
 
   private async loadData() {
+    /**
+     * We get the first 10 items.
+     * Properties: We load all properties of the listItem -> $ : true
+     * AND also return all the properties of the linked author field -> author: { $: true }
+     */
+
     this.books = (
       await this.list.catalog.getItems({
         start: 0,
@@ -35,6 +41,6 @@ export class ProductListComponent implements OnInit {
       })
     ).result!;
 
-    this.meta = await (await this.list.catalog.getMetadata()).result!;
+    this.meta = (await this.list.catalog.getMetadata()).result!;
   }
 }

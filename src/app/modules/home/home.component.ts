@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   private async init() {
     await this.initLoader();
     await this.initList();
+    this.isLoading = false;
   }
 
   private async initLoader() {
@@ -70,10 +71,11 @@ export class HomeComponent implements OnInit {
 
     if (error) {
       this.showError = true;
+      return;
     }
 
     this.dcupl.init();
-    this.isLoading = false;
+
     Object.defineProperty(window, 'dcupl', { value: this.dcupl });
   }
 
