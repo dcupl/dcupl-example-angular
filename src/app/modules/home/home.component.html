@@ -8,7 +8,22 @@
   </div>
 
   <div *ngIf="showError" class="text-center mt-16">
-    <p>Uuups... Something went wrong.</p>
+    <h3 class="text-2xl mb-8">Uuups... Something went wrong.</h3>
+    <p class="mb-5">Did you start your dcupl cli server?</p>
+    <div class="w-96 block mx-auto">
+      <code class="p-3 bg-gray-100 w-full inline-block text-left">
+        <span>
+          npm i -g @dcupl/cli <br />
+          npm init <br />
+        </span>
+        <span class="text-gray-400">// select "bookstore" <br /><br /></span>
+        <span>
+          cd *your_project_name* <br />
+          npm i <br />
+          npm run serve
+        </span>
+      </code>
+    </div>
   </div>
 
   <div *ngIf="!isLoading && !showError">
