@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dcupl-examples"
+  },
+  "targets": {
+    "dcupl-examples": {
+      "hosting": {
+        "bookstore": [
+          "dcupl-bookstore"
+        ]
+      }
+    }
+  }
+}
