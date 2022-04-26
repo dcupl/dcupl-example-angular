@@ -35,9 +35,14 @@ export class HomeComponent implements OnInit {
     const loader = new DcuplConfigLoader();
     this.dcupl.addLoader(loader);
 
-    await loader.fetchConfig({
+    const config = await loader.fetchConfig({
       url: 'http://localhost:8083/bookstore.dcupl.lc.json',
     });
+
+    if (!config) {
+      this.showError = true;
+      return;
+    }
 
     const { error } = await loader.process({ presetKey: 'default' });
 
