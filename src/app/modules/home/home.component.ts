@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     this.dcupl.addLoader(loader);
 
     const config = await loader.fetchConfig({
-      url: 'http://localhost:8083/bookstore.dcupl.lc.json',
+      url: 'http://localhost:8083/example.dcupl.lc.json',
     });
 
     if (!config) {
